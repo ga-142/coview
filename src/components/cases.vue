@@ -78,9 +78,12 @@
               <DxGrid :visible="false" />
             </DxArgumentAxis>
             <DxLegend
+              :paddingLeftRight="30"
+              :paddingTopBottom="30"
               vertical-alignment="bottom"
               horizontal-alignment="center"
               item-text-position="right"
+              backgroundColor="#333"
               :columnItemSpacing="70"
               :font="legendFont"
               :markerSize="15"
@@ -91,6 +94,7 @@
             </DxTitle>
             <DxTooltip :enabled="true" :customizeTooltip="customizeTooltip" />
           </DxChart>
+          <p>*Click legend to show / hide series</p>
         </div>
       </div>
     </div>
@@ -163,7 +167,7 @@ export default Vue.extend({
       dataSeries: data.series,
       type: "spline",
       pallete: "Material",
-      state: "OR",
+      state: "USA",
       states: data.states
     };
   },
@@ -205,6 +209,9 @@ export default Vue.extend({
           data[key].totalTestResultsIncrease =
             data[key].totalTestResultsIncrease * -1;
         }
+        if (data[key].hospitalizedIncrease < 0) {
+          data[key].hospitalizedIncrease = data[key].hospitalizedIncrease * -1;
+        }
       }
       return data;
     },
@@ -217,7 +224,6 @@ export default Vue.extend({
         res = await apiService.getState(this.state);
       }
       this.daily = await this.dataIn(res.data);
-      console.log(this.daily);
       this.loading = false;
     },
     legendClickHandler(e: any) {
@@ -225,7 +231,6 @@ export default Vue.extend({
         const series = this.dataSeries.find(itm => {
           return itm.name === e.target.name;
         });
-        console.log(series);
         if (series) {
           series.visible = !series.visible;
         }
@@ -254,5 +259,8 @@ export default Vue.extend({
 }
 .preloader-row {
   margin-top: -66px;
+}
+.chart-wrapper ::v-deep .dxc-item g {
+  cursor: pointer;
 }
 </style>

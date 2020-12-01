@@ -6,6 +6,7 @@
 
 <script lang="ts">
 // @ is an alias to /src
+import news from "@/components/news.vue";
 import { Component, Prop, Vue } from "vue-property-decorator";
 
 import cases from "@/components/cases.vue";

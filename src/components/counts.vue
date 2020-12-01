@@ -27,7 +27,14 @@
         </h2>
       </div>
       <div class="col-md col-sm-12 grey-border pt-2">
-        <h5>Last Updated: {{ today.lastUpdateEt }}</h5>
+        <h5>
+          Last Updated:
+          {{ today.lastUpdateEt ? today.lastUpdateEt : today.date }}
+        </h5>
+        <h5>
+          Data Quality Grade:
+          {{ today.dataQualityGrade ? today.dataQualityGrade : "N/A" }}
+        </h5>
       </div>
     </div>
   </div>
@@ -38,6 +45,9 @@ import Vue from "vue";
 export default Vue.extend({
   props: {
     today: Object
+  },
+  created() {
+    console.log(this.today);
   }
 });
 </script>
@@ -47,7 +57,7 @@ export default Vue.extend({
     display: block;
   }
   h2.huge {
-    font-size: 4.5em;
+    font-size: 4em;
     font-weight: 600;
   }
 }

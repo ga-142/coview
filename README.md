@@ -1,6 +1,6 @@
 # coview
 
-Coview is a US Covid-19 tracking dashboard utilizing data from the [Covid Tracking Project](https://covidtracking.com/), [Vue.js](https://vuejs.org/) & [DevExtreme](https://js.devexpress.com/).
+Coview is a US Covid-19 tracking dashboard utilizing [Vue.js](https://vuejs.org/) & [DevExtreme](https://js.devexpress.com/) and data from the [Covid Tracking Project](https://covidtracking.com/).
 
 
 
