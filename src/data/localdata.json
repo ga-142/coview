@@ -246,7 +246,7 @@
       "name": "Tests",
       "value": "totalTestResultsIncrease",
       "color": "#2e6f8e",
-      "visible": true
+      "visible": false
     },
     {
       "name": "Positive Tests",
