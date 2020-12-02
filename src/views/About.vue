@@ -22,7 +22,7 @@
           <a href="https://github.com/ga-142/coview">Github</a>.
         </p>
         <h3>Features</h3>
-        <img src="@/assets/coview.png" />
+        <img src="@/assets/coview-min.png" />
       </div>
     </div>
   </div>

@@ -54,6 +54,7 @@
             :data-source="daily"
             @legend-click="legendClickHandler($event)"
             :size="{ height: 500 }"
+            :animation="true"
           >
             <DxCommonSeriesSettings :type="type" argument-field="date" />
             <DxCommonAxisSettings>
@@ -94,7 +95,7 @@
             </DxTitle>
             <DxTooltip :enabled="true" :customizeTooltip="customizeTooltip" />
           </DxChart>
-          <p>*Click legend to show / hide series</p>
+          <h5>*Click legend to show / hide series</h5>
         </div>
       </div>
     </div>
@@ -160,7 +161,7 @@ export default Vue.extend({
       aggregationFunctions: data.functions,
       currentFunction: "avg",
       aggKey: 0,
-      aggEnabled: false,
+      aggEnabled: true,
       currentAgg: "avg",
       loading: true,
       daily: null,

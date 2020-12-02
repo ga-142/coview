@@ -45,9 +45,6 @@ import Vue from "vue";
 export default Vue.extend({
   props: {
     today: Object
-  },
-  created() {
-    console.log(this.today);
   }
 });
 </script>
